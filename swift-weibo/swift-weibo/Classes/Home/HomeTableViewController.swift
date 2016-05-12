@@ -25,14 +25,19 @@ class HomeTableViewController: BaseTableViewController {
     }
     
     private func setUpNav(){
-        //1.左边按钮
-//        navigationItem.leftBarButtonItem = createBarButtonItem("navigationbar_friendattention", target: self, action: "leftItemClick")
-//        //2.右边按钮
-//        navigationItem.rightBarButtonItem = createBarButtonItem("navigationbar_pop", target: self, action: "rightItemClick")
-
+        //1.初始化左边 右边按钮
         navigationItem.leftBarButtonItem = UIBarButtonItem.createBarButtonItem("navigationbar_friendattention", target: self, action: "leftItemClick")
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem.createBarButtonItem("navigationbar_pop", target: self, action: "rightItemClick")
+        
+        let titleBtn = TitleButton()
+        titleBtn.setTitle("summer " , forState: UIControlState.Normal)
+        titleBtn.addTarget(self, action: "titleBtnClick:", forControlEvents: UIControlEvents.TouchUpInside)
+
+        navigationItem.titleView = titleBtn
+    }
+    
+    func titleBtnClick(btn: TitleButton){
+        btn.selected = !btn.selected
     }
     
     func leftItemClick(){
@@ -42,13 +47,4 @@ class HomeTableViewController: BaseTableViewController {
     func rightItemClick(){
         print(__FUNCTION__)
     }
-    
-//    private func createBarButtonItem(imageName:String, target:AnyObject?, action:Selector) -> UIBarButtonItem{
-//        let btn = UIButton()
-//        btn.setImage(UIImage(named: imageName), forState: UIControlState.Normal)
-//        btn.setImage(UIImage(named: imageName + "_highlighted"), forState: UIControlState.Highlighted)
-//        btn.sizeToFit()
-//        btn.addTarget(target, action:action, forControlEvents: UIControlEvents.TouchUpInside)
-//        return UIBarButtonItem(customView: btn)
-//    }
 }

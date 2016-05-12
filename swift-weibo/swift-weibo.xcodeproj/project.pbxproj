@@ -20,6 +20,7 @@
 		7BC4BB1B1CE334F400DAD180 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC4BB1A1CE334F400DAD180 /* VisitorView.swift */; };
 		7BC4BB1D1CE4234600DAD180 /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC4BB1C1CE4234600DAD180 /* UIView+AutoLayout.swift */; };
 		7BC4BB1F1CE45F5100DAD180 /* UIBarButtonItem+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC4BB1E1CE45F5100DAD180 /* UIBarButtonItem+Category.swift */; };
+		7BC4BB231CE462BE00DAD180 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC4BB221CE462BE00DAD180 /* TitleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		7BC4BB1A1CE334F400DAD180 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		7BC4BB1C1CE4234600DAD180 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		7BC4BB1E1CE45F5100DAD180 /* UIBarButtonItem+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Category.swift"; sourceTree = "<group>"; };
+		7BC4BB221CE462BE00DAD180 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				7BC4BB1E1CE45F5100DAD180 /* UIBarButtonItem+Category.swift */,
+				7BC4BB221CE462BE00DAD180 /* TitleButton.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				7B86EC601CE1A9BE00586053 /* MessageTableViewController.swift in Sources */,
 				7BC4BB1B1CE334F400DAD180 /* VisitorView.swift in Sources */,
 				7B86EC3E1CE0294800586053 /* AppDelegate.swift in Sources */,
+				7BC4BB231CE462BE00DAD180 /* TitleButton.swift in Sources */,
 				7BC4BB171CE327EB00DAD180 /* NullViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
