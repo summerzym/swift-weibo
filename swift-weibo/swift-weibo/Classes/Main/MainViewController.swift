@@ -14,6 +14,24 @@ class MainViewController: UITabBarController {
         super.viewDidLoad()
         // 添加子控制器
         addChildViewControllers()
+        
+        //从iOS7开始就不推荐大家在viewDidload中设置frame
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        setupComposeBtn()
+    }
+    
+    func composeBtnClick(){
+        print(__FUNCTION__)
+    }
+    
+    private func setupComposeBtn(){
+        tabBar.addSubview(componseBtn)
+        let width = UIScreen.mainScreen().bounds.size.width / CGFloat(viewControllers!.count)
+        let rect = CGRect(x: 0, y: 0, width: width, height:49)
+        componseBtn.frame = CGRectOffset(rect, width*2, 0)
     }
     
     /**
@@ -39,6 +57,7 @@ class MainViewController: UITabBarController {
                 print(error)
                 addChildViewController("HomeTableViewController", title: "首页", imageName: "tabbar_home")
                 addChildViewController("MessageTableViewController", title: "消息", imageName: "tabbar_message_center")
+                addChildViewController("NullViewController", title: "", imageName: "")
                 addChildViewController("DiscoverTableViewController", title: "发现", imageName: "tabbar_discover")
                 addChildViewController("ProfileTableViewController", title: "我", imageName: "tabbar_profile")
             }
@@ -65,7 +84,7 @@ class MainViewController: UITabBarController {
         let cls:AnyClass = NSClassFromString(clsName)!
         print(cls)
         // 告诉编译器真实类型是UIViewController
-        let vcCls = cls as! UITableViewController.Type
+        let vcCls = cls as! UIViewController.Type
         // 实例化控制器
         let vc = vcCls.init()
         
@@ -83,6 +102,16 @@ class MainViewController: UITabBarController {
         
         // 3.添加控制器到tabbarVC
         addChildViewController(nav)
-        
     }
+    
+    private lazy var componseBtn:UIButton = {
+        let btn = UIButton()
+        btn.setImage(UIImage(named: "tabbar_compose_icon_add"), forState: UIControlState.Normal)
+        btn.setImage(UIImage(named: "tabbar_compose_icon_add_highlighted"), forState: UIControlState.Highlighted)
+        
+        btn.setBackgroundImage(UIImage(named: "tabbar_compose_button"), forState: UIControlState.Normal)
+        btn.setBackgroundImage(UIImage(named: "tabbar_compose_button_highlighted"), forState: UIControlState.Highlighted)
+        btn.addTarget(self , action: "composeBtnClick", forControlEvents: UIControlEvents.TouchUpInside)
+        return btn
+    }()
 }

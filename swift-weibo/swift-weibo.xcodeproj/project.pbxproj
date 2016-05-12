@@ -15,6 +15,10 @@
 		7B86EC601CE1A9BE00586053 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B86EC5F1CE1A9BE00586053 /* MessageTableViewController.swift */; };
 		7B86EC621CE1A9CA00586053 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B86EC611CE1A9CA00586053 /* ProfileTableViewController.swift */; };
 		7BC48DE51CE318890073DBA9 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BC48DE41CE318890073DBA9 /* MainVCSettings.json */; };
+		7BC4BB171CE327EB00DAD180 /* NullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC4BB161CE327EB00DAD180 /* NullViewController.swift */; };
+		7BC4BB191CE3318200DAD180 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC4BB181CE3318200DAD180 /* BaseTableViewController.swift */; };
+		7BC4BB1B1CE334F400DAD180 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC4BB1A1CE334F400DAD180 /* VisitorView.swift */; };
+		7BC4BB1D1CE4234600DAD180 /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC4BB1C1CE4234600DAD180 /* UIView+AutoLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		7B86EC5F1CE1A9BE00586053 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		7B86EC611CE1A9CA00586053 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		7BC48DE41CE318890073DBA9 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
+		7BC4BB161CE327EB00DAD180 /* NullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullViewController.swift; sourceTree = "<group>"; };
+		7BC4BB181CE3318200DAD180 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		7BC4BB1A1CE334F400DAD180 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
+		7BC4BB1C1CE4234600DAD180 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +118,9 @@
 			children = (
 				7BC48DE41CE318890073DBA9 /* MainVCSettings.json */,
 				7B86EC591CE1A90900586053 /* MainViewController.swift */,
+				7BC4BB161CE327EB00DAD180 /* NullViewController.swift */,
+				7BC4BB1A1CE334F400DAD180 /* VisitorView.swift */,
+				7BC4BB181CE3318200DAD180 /* BaseTableViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -133,6 +144,7 @@
 		7B86EC561CE1A7AC00586053 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				7BC4BB1C1CE4234600DAD180 /* UIView+AutoLayout.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -209,10 +221,14 @@
 			files = (
 				7B86EC621CE1A9CA00586053 /* ProfileTableViewController.swift in Sources */,
 				7B86EC5C1CE1A96D00586053 /* HomeTableViewController.swift in Sources */,
+				7BC4BB191CE3318200DAD180 /* BaseTableViewController.swift in Sources */,
 				7B86EC5A1CE1A90900586053 /* MainViewController.swift in Sources */,
 				7B86EC5E1CE1A9AC00586053 /* DiscoverTableViewController.swift in Sources */,
+				7BC4BB1D1CE4234600DAD180 /* UIView+AutoLayout.swift in Sources */,
 				7B86EC601CE1A9BE00586053 /* MessageTableViewController.swift in Sources */,
+				7BC4BB1B1CE334F400DAD180 /* VisitorView.swift in Sources */,
 				7B86EC3E1CE0294800586053 /* AppDelegate.swift in Sources */,
+				7BC4BB171CE327EB00DAD180 /* NullViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
