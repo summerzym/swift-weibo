@@ -19,13 +19,14 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popover_background" translatesAutoresizingMaskIntoConstraints="NO" id="Iqs-nR-Mpj">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d3H-ou-11b">
                                 <rect key="frame" x="20" y="20" width="560" height="560"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="d3H-ou-11b" firstAttribute="trailing" secondItem="Iqs-nR-Mpj" secondAttribute="trailing" constant="-20" id="5RH-BO-U5B"/>
                             <constraint firstItem="d3H-ou-11b" firstAttribute="leading" secondItem="Iqs-nR-Mpj" secondAttribute="leading" constant="20" id="7eb-fu-jsc"/>
