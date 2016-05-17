@@ -26,15 +26,6 @@ class HomeTableViewController: BaseTableViewController {
         
     }
     
-    func letBtnClick()
-    {
-        print(__FUNCTION__);
-    }
-    func rightBtnClick()
-    {
-        print(__FUNCTION__);
-    }
-    
     deinit
     {
         // 移除通知
@@ -92,6 +83,20 @@ class HomeTableViewController: BaseTableViewController {
         
         presentViewController(vc!, animated: true, completion: nil)
     }
+    
+    func letBtnClick()
+    {
+        print(__FUNCTION__);
+    }
+    
+    func rightBtnClick()
+    {
+        print(__FUNCTION__);
+        let sb = UIStoryboard(name: "QRCodeViewController", bundle: nil)
+        let vc = sb.instantiateInitialViewController()!
+        presentViewController(vc, animated: true, completion: nil)
+    }
+    
     
     // MARK: - 懒加载
     // 一定要定义一个属性来报错自定义转场对象, 否则会报错

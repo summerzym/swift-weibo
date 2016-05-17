@@ -24,6 +24,8 @@
 		7BC4BB261CE4859700DAD180 /* FriendGroup.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC4BB251CE4859700DAD180 /* FriendGroup.Storyboard */; };
 		7BC4BB2F1CE57F1800DAD180 /* PopoverPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC4BB2E1CE57F1800DAD180 /* PopoverPresentationController.swift */; };
 		7BC4BB311CE5D8D700DAD180 /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC4BB301CE5D8D700DAD180 /* PopoverAnimator.swift */; };
+		7BFA7B691CE97A870038FAB0 /* QRCodeViewController.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BFA7B681CE97A870038FAB0 /* QRCodeViewController.Storyboard */; };
+		7BFA7B6B1CE97B170038FAB0 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFA7B6A1CE97B170038FAB0 /* QRCodeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		7BC4BB251CE4859700DAD180 /* FriendGroup.Storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FriendGroup.Storyboard; sourceTree = "<group>"; };
 		7BC4BB2E1CE57F1800DAD180 /* PopoverPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresentationController.swift; sourceTree = "<group>"; };
 		7BC4BB301CE5D8D700DAD180 /* PopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
+		7BFA7B681CE97A870038FAB0 /* QRCodeViewController.Storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCodeViewController.Storyboard; sourceTree = "<group>"; };
+		7BFA7B6A1CE97B170038FAB0 /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 		7B86EC521CE1A7AC00586053 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				7BFA7B671CE979E70038FAB0 /* QRCode */,
 				7BC4BB241CE4852800DAD180 /* popover */,
 				7B86EC5B1CE1A96D00586053 /* HomeTableViewController.swift */,
 			);
@@ -170,6 +175,15 @@
 				7BC4BB301CE5D8D700DAD180 /* PopoverAnimator.swift */,
 			);
 			path = popover;
+			sourceTree = "<group>";
+		};
+		7BFA7B671CE979E70038FAB0 /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				7BFA7B681CE97A870038FAB0 /* QRCodeViewController.Storyboard */,
+				7BFA7B6A1CE97B170038FAB0 /* QRCodeViewController.swift */,
+			);
+			path = QRCode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +247,7 @@
 				7BC48DE51CE318890073DBA9 /* MainVCSettings.json in Resources */,
 				7BC4BB261CE4859700DAD180 /* FriendGroup.Storyboard in Resources */,
 				7B86EC451CE0294900586053 /* Assets.xcassets in Resources */,
+				7BFA7B691CE97A870038FAB0 /* QRCodeViewController.Storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +267,7 @@
 				7BC4BB1F1CE45F5100DAD180 /* UIBarButtonItem+Category.swift in Sources */,
 				7BC4BB1D1CE4234600DAD180 /* UIView+AutoLayout.swift in Sources */,
 				7BC4BB311CE5D8D700DAD180 /* PopoverAnimator.swift in Sources */,
+				7BFA7B6B1CE97B170038FAB0 /* QRCodeViewController.swift in Sources */,
 				7B86EC601CE1A9BE00586053 /* MessageTableViewController.swift in Sources */,
 				7BC4BB1B1CE334F400DAD180 /* VisitorView.swift in Sources */,
 				7B86EC3E1CE0294800586053 /* AppDelegate.swift in Sources */,
