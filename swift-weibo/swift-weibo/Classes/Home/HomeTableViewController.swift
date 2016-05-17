@@ -14,6 +14,8 @@ class HomeTableViewController: BaseTableViewController {
     {
         super.viewDidLoad()
         
+        
+        
         if !userLogin{
             visitorView?.setupVisitorInfo(true, imageName: "visitordiscover_feed_image_house", message: "关注一些人，回这里看看有什么惊喜")
         }
