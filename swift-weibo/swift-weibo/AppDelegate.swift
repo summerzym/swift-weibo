@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import AFNetworking
+
+/// 视图控制器切换通知字符串
+let XMGRootViewControllerSwitchNotification = "XMGRootViewControllerSwitchNotification"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,43 +19,82 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        //设置导航条
-        UINavigationBar.appearance().tintColor = UIColor.orangeColor()
-        UITabBar.appearance().tintColor = UIColor.orangeColor()
+        // 设置网路指示器
+        AFNetworkActivityIndicatorManager.sharedManager().enabled = true
+        // 设置网络缓存
+        /*
+        memoryCapacity: 内存大小
+        diskCapacity: 磁盘大小
+        diskPath: 磁盘路径
+        */
+        let urlCache = NSURLCache(memoryCapacity: 4 * 1024 * 1024, diskCapacity: 20 * 1024 * 1024, diskPath: nil)
+        NSURLCache.setSharedURLCache(urlCache)
         
-        //1.创建window
+        
+        // 注册通知
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "switchRootViewController:", name: XMGRootViewControllerSwitchNotification, object: nil)
+        
+        // 0.设置外观
+        setupAppearance()
+        
+        // 1.创建window
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.backgroundColor = UIColor.whiteColor()
-        
-        //2.创建根控制器
-        window?.rootViewController = MainViewController()
+        window?.rootViewController = defaultController()
+        // 2.显示window
         window?.makeKeyAndVisible()
         
         return true
     }
 
-    func applicationWillResignActive(application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    /**
+     监听通知切换控制器
+     */
+    func switchRootViewController(notification : NSNotification)
+    {
+        let isMainVC = notification.object as! Bool
+        window?.rootViewController = isMainVC ? MainViewController() : WelcomeViewController()
+    }
+    
+    private func defaultController() -> UIViewController{
+        if UserAccount.loadAccount() != nil{
+            // 用户已经登录
+            return isNewUpdate() ? NewfeatureViewController() : WelcomeViewController()
+        }
+        
+        // 用户没有登录
+        return MainViewController()
+    }
+    
+    /// 检查是否有新版本
+    private func isNewUpdate() -> Bool
+    {
+        // 1.获取应用程序当前版本
+        let currentVersion = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
+        // 2.获取沙河应用程序版本
+        let sandboxVersion = NSUserDefaults.standardUserDefaults().valueForKey("CFBundleShortVersionString") as? String ?? "0.0"
+        
+        // 3.利用当前版本和以前版本比较
+        // 1.0                      0.9
+        if currentVersion.compare(sandboxVersion) == NSComparisonResult.OrderedDescending{
+            // 3.1如果有新版本, 将新版本保存到偏好设置中
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setValue(currentVersion, forKey: "CFBundleShortVersionString")
+            // iOS 7.0 之后，就不需要同步了，iOS 6.0 之前，如果不同步不会第一时间写入沙盒
+            defaults.synchronize()
+            // 4.返回时候有新版本
+            return true
+        }
+        return false
     }
 
-    func applicationDidEnterBackground(application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    /**
+     设置外观
+     */
+    private func setupAppearance(){
+        // 一经设置，全局有效，应该尽早设置
+        UINavigationBar.appearance().tintColor = UIColor.orangeColor()
+        UITabBar.appearance().tintColor = UIColor.orangeColor()
     }
-
-    func applicationWillEnterForeground(application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    }
-
-    func applicationDidBecomeActive(application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
-
-    func applicationWillTerminate(application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-
-
 }
 
