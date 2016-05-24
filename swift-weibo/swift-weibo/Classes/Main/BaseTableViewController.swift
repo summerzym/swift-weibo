@@ -10,7 +10,7 @@ import UIKit
 
 class BaseTableViewController: UITableViewController,VistorViewDelegate {
 
-    var userLogin = true
+    var userLogin = UserAccount.userLogin()
     var visitorView:VisitorView?
     override func loadView() {
         userLogin ? super.loadView() : setUpVisitorView()
